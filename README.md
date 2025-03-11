@@ -58,7 +58,7 @@ Tous les services communiquent via un réseau privé Docker appelé `app-network
 2️⃣ **Lancer les services**
 
 ```sh
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 3️⃣ **Accéder aux services**
