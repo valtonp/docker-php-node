@@ -11,7 +11,7 @@ mon-projet/
 │── projects/
 │   ├── backend/     
 │   ├── frontend/    
-│── docker-compose.yml
+│── docker-compose.yaml
 │── Dockerfile        
 │── README.md         
 ```
