@@ -1,4 +1,3 @@
-# Utiliser l'image officielle d'Apache avec PHP 8.3
 FROM php:8.3-apache
 
 RUN echo "ServerName localhost" | tee -a /etc/apache2/apache2.conf
@@ -34,8 +33,6 @@ RUN a2enmod rewrite
 # Donner les permissions nécessaires (www-data pour apache)
 RUN chown -R www-data:www-data /var/www/html
 
-# Exposer le port 80
 EXPOSE 8000
 
-# Commande pour démarrer Apache en mode foreground
 CMD ["apache2-foreground"]
