@@ -37,9 +37,13 @@ mon-projet/
 - Stocke les données dans un volume persistant (`db-data`)
 - Ports exposés :
     - `3306:3306` (MySQL)
-- Identifiants :
-    - **Utilisateur root** : `root`
-    - **Mot de passe root** : `root`
+  
+🔐 Pour définir le mot de passe de la base de données :
+- Créez un fichier .env à la racine de votre projet si ce n'est pas déjà fait.
+- Ajoutez la ligne suivante dans le fichier .env :
+```sh
+MYSQL_ROOT_PASSWORD="votremotdepasse"
+```
 
 ### 3️⃣ **Réseau Docker**
 
