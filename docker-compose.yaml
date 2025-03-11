@@ -1,0 +1,39 @@
+services:
+
+  # Service web (PHP 8.3 + Apache + Composer + node 23)
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php-web
+    ports:
+      - "5173:5173" # Pour le frontend
+      - "8000:80" # Pour le backend
+    volumes:
+      - ./projects/backend/:/var/www/html
+      - ./projects/frontend/:/root/workspace
+    depends_on:
+      - db 
+    networks:
+      - app-network
+
+  # Service de base de données (MySQL)
+  db:
+    image: mysql:8.0
+    container_name: mysql-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root 
+    volumes:
+      - db-data:/var/lib/mysql  # Stocke les données de la BD pour persistance
+    networks:
+      - app-network
+
+# Réseau pour tous les services
+networks:
+  app-network:
+
+# Volume pour stocker les données de la base de données
+volumes:
+  db-data:
