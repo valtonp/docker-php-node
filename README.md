@@ -1,4 +1,4 @@
-# Configuration de ma stack en local
+# Configuration Docker
 
 Ce projet utilise Docker pour exécuter un environnement de développement avec **PHP 8.3, Apache, MySQL, Composer et Node.js 23**.
 
